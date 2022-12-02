@@ -1,0 +1,13 @@
+.navLinks {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+  font-weight: bold;
+}
+.links {
+  padding: 0 10px;
+}
+.links:hover {
+  color: #34d399;
+}
