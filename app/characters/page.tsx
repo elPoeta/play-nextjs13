@@ -1,10 +1,22 @@
 import React from 'react'
+import { BASE_API_URL } from '../../utils/constants';
 
-const CharactersPage = ({ searchParams }: { searchParams: { page?: string } }) => {
-  const { page = '' } = searchParams;
+const fetchCharacters = async ({page}:{page:string}) => {
+  const response = await fetch(`${BASE_API_URL}/character/?page=${page}`);
+  const characters = await response.json();
+  return characters;
+} 
+
+const CharactersPage = async ({ searchParams }: { searchParams: { page?: string } }) => {
+  const { page = '1'} = searchParams;
   console.log(page) //{ params: {}, searchParams: { page: '2' } }
+  const characters:unknown = await fetchCharacters({page});
+
   return (
-    <div>Characters page {page}</div>
+    <div>
+      Characters page {page}
+       <pre>{JSON.stringify(characters, null, 2)}</pre>
+    </div>
   )
 }
 
