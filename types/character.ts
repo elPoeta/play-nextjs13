@@ -21,7 +21,7 @@ export type Info = {
   prev: string | null;
 };
 
-export type Location = {
+export type OriginLocation = {
   name: string;
   url: string;
 };
@@ -32,8 +32,8 @@ export type Character = {
   species: Species;
   type: string;
   gender: Gender;
-  origin: Location;
-  location: Location;
+  origin: OriginLocation;
+  location: OriginLocation;
   image: string;
   episode: string[];
   url: string;
