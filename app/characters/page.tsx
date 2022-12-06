@@ -9,7 +9,7 @@ const fetchCharacters = async ({page}:{page:string}) => {
 
 const CharactersPage = async ({ searchParams }: { searchParams: { page?: string } }) => {
   const { page = '1'} = searchParams;
-  console.log(page) //{ params: {}, searchParams: { page: '2' } }
+  console.log(page) 
   const characters:unknown = await fetchCharacters({page});
 
   return (
