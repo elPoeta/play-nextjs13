@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import React from 'react'
+import { Pagination } from '../../components/pagination/Pagination';
 import { APIResponse } from '../../types/apiType';
 import { Character } from '../../types/character';
 import { BASE_API_URL } from '../../utils/constants';
@@ -11,13 +13,14 @@ const fetchCharacters = async ({page}:{page:string}) => {
 
 const CharactersPage = async ({ searchParams }: { searchParams: { page?: string } }) => {
   const { page = '1'} = searchParams;
-  console.log(page) 
   const { info, results  } : APIResponse = await fetchCharacters({page});
   const characters = results as Character[];
+
   return (
     <div>
       Characters page {page}
-       <pre>{JSON.stringify(characters, null, 2)}</pre>
+      <pre>{JSON.stringify(characters, null, 2)}</pre>
+      <Pagination info={info} page={parseInt(page)}/>
     </div>
   )
 }
