@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import React from 'react'
+import { Characters } from '../../components/character/Characters';
 import { Pagination } from '../../components/pagination/Pagination';
 import { APIResponse } from '../../types/apiType';
 import { Character } from '../../types/character';
@@ -18,8 +18,7 @@ const CharactersPage = async ({ searchParams }: { searchParams: { page?: string 
 
   return (
     <div>
-      Characters page {page}
-      <pre>{JSON.stringify(characters, null, 2)}</pre>
+      <Characters characters={characters} />
       <Pagination info={info} page={parseInt(page)}/>
     </div>
   )
