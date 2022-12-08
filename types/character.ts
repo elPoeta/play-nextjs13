@@ -12,6 +12,13 @@ export const enum Gender {
 export const enum Species {
   HUMAN = "Human",
   ALIEN = "Alien",
+  HUMANOID = "Humanoid",
+  ROBOT = "Robot",
+  POOPYBUTTHOLE = "Poopybutthole",
+  MYTHOLOGICAL_CREATURE = "Mythological Creature",
+  ANIMAL = "Animal",
+  CRONENBERG = "Cronenberg",
+  DISEASE = "Disease",
 }
 export type OriginLocation = {
   name: string;
