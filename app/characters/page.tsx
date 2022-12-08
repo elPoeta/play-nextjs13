@@ -4,6 +4,7 @@ import { Pagination } from '../../components/pagination/Pagination';
 import { APIResponse } from '../../types/apiType';
 import { Character } from '../../types/character';
 import { BASE_API_URL } from '../../utils/constants';
+import styles from './page.module.css';
 
 const fetchCharacters = async ({page}:{page:string}) => {
   const response = await fetch(`${BASE_API_URL}/character/?page=${page}`);
@@ -17,7 +18,7 @@ const CharactersPage = async ({ searchParams }: { searchParams: { page?: string 
   const characters = results as Character[];
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <Characters characters={characters} />
       <Pagination info={info} page={parseInt(page)}/>
     </div>
