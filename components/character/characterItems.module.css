@@ -3,9 +3,34 @@
   grid-template-columns: 200px 1fr;
   background-color: #1e293b;
   border-radius: 10px;
-  gap: 5px;
+  column-gap: 5px;
 }
 .characterData {
+  padding: 2px;
+}
+
+.characterData h3 {
+  font-weight: bold;
+}
+
+.status {
   display: flex;
-  padding: 5px;
+  -webkit-box-align: center;
+  align-items: center;
+  text-transform: capitalize;
+}
+.statusIcon {
+  height: 0.5rem;
+  width: 0.5rem;
+  margin-right: 0.375rem;
+  border-radius: 50%;
+}
+.statusIconAlive {
+  background: rgb(85, 204, 68);
+}
+.statusIconDead {
+  background: rgb(214, 61, 46);
+}
+.statusIconUnknown{
+  background: rgb(161, 161, 161);
 }
