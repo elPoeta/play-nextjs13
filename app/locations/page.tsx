@@ -1,9 +1,9 @@
 import React from 'react'
 
-const LocationPage = () => {
+const LocationsPage = () => {
   return (
     <div>Locations</div>
   )
 }
 
-export default LocationPage;
+export default LocationsPage;
