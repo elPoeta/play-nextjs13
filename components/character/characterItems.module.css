@@ -5,11 +5,21 @@
   border-radius: 10px;
   column-gap: 5px;
 }
+
 .characterData {
   padding: 2px;
 }
 
 .characterData h3 {
+  font-weight: bold;
+}
+
+.character {
+  margin: 10px 0;
+}
+
+.characterLink {
+  font-size: 1.3em;
   font-weight: bold;
 }
 
@@ -19,18 +29,31 @@
   align-items: center;
   text-transform: capitalize;
 }
+
 .statusIcon {
   height: 0.5rem;
   width: 0.5rem;
   margin-right: 0.375rem;
   border-radius: 50%;
 }
+
 .statusIconAlive {
   background: rgb(85, 204, 68);
 }
+
 .statusIconDead {
   background: rgb(214, 61, 46);
 }
-.statusIconUnknown{
+
+.statusIconUnknown {
   background: rgb(161, 161, 161);
+}
+
+.characterInfo {
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+.characterInfo p {
+  color: chocolate;
 }
