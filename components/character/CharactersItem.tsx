@@ -1,16 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react'
+import { getEpisodes } from '../../services/fetchingAPI';
 import { Character, Status } from '../../types/character'
 import { Episode } from '../../types/episode';
-import { BASE_API_URL } from '../../utils/constants';
 import styles from './characterItems.module.css';
 
-const fetchEpisodes = async ({ episode }: { episode: string }) => {
-  const response = await fetch(`${BASE_API_URL}/episode/${episode}`);
-  const json: Episode = await response.json();
-  return json;
-}
+
 
 export const CharactersItem = async ({ character }: { character: Character }) => {
   const status = character.status === Status.ALIVE ? styles.statusIconAlive
@@ -20,7 +16,7 @@ export const CharactersItem = async ({ character }: { character: Character }) =>
   let episode: Episode;
   if (firstSeenUrl) {
     const id = firstSeenUrl.split('/').pop();
-    episode = await fetchEpisodes({ episode: id! });
+    episode = await getEpisodes({ episode: id! });
   }
   return (
     <article className={styles.article}>
