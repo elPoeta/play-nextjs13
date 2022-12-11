@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react'
-import { APIResponse } from '../../types/apiType';
 import { Character, Status } from '../../types/character'
 import { Episode } from '../../types/episode';
 import { BASE_API_URL } from '../../utils/constants';
