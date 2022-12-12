@@ -13,11 +13,12 @@ export const CharactersItem = async ({ character }: { character: Character }) =>
     : character.status === Status.DEAD ? styles.statusIconDead : styles.statusIconUnknown;
   const location = character.location.url.split("/").pop();
   const firstSeenUrl = !character.episode.length ? null : character.episode[0];
-  let episode: Episode;
+  let episode: Episode | null = null;
   if (firstSeenUrl) {
     const id = firstSeenUrl.split('/').pop();
-    episode = await getEpisodes({ episode: id! });
-  }
+    if(id)
+      episode = await getEpisodes({ episode: id });
+  } 
   return (
     <article className={styles.article}>
       <div>
@@ -37,9 +38,9 @@ export const CharactersItem = async ({ character }: { character: Character }) =>
         </section>
         <section className={styles.characterInfo}>
           <p>First seen in:</p>
-          {firstSeenUrl ? (
-            <>{episode!.name}</>
-          ) : ''}
+          {firstSeenUrl && episode ? (
+            <Link href={`/episodes/${episode.id}`}>{episode.name}</Link>
+          ) : (<>-</>)}
         </section>
       </div>
     </article>
