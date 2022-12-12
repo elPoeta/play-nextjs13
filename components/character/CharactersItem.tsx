@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react'
-import { getEpisodes } from '../../services/fetchingAPI';
+import { getData } from '../../services/fetchingAPI';
 import { Character, Status } from '../../types/character'
 import { Episode } from '../../types/episode';
 import styles from './characterItems.module.css';
@@ -17,7 +17,7 @@ export const CharactersItem = async ({ character }: { character: Character }) =>
   if (firstSeenUrl) {
     const id = firstSeenUrl.split('/').pop();
     if(id)
-      episode = await getEpisodes({ episode: id });
+      episode = await getData({ id, path: 'episode' }) as Episode;
   } 
   return (
     <article className={styles.article}>
