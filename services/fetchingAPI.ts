@@ -1,29 +1,27 @@
+import { type } from "os";
 import { APIResponse } from "../types/apiType";
 import { Character } from "../types/character";
 import { Episode } from "../types/episode";
 import { Location } from "../types/location";
 import { BASE_API_URL } from "../utils/constants";
 
-export const getCharacters = async ({ page }: { page: string }) => {
-  const response = await fetch(`${BASE_API_URL}/character/?page=${page}`);
+type DataByPageParams = {
+  page: string;
+  path: string;
+};
+
+type DataParams = {
+  id: string;
+  path: string;
+};
+export const getDataByPage = async ({ page, path }: DataByPageParams) => {
+  const response = await fetch(`${BASE_API_URL}/${path}/?page=${page}`);
   const json: APIResponse = await response.json();
   return json;
 };
 
-export const getCharacter = async ({ id }: { id: string }) => {
-  const response = await fetch(`${BASE_API_URL}/character/${id}`);
-  const json: Character = await response.json();
-  return json;
-};
-
-export const getEpisode = async ({ id }: { id: string }) => {
-  const response = await fetch(`${BASE_API_URL}/episode/${id}`);
-  const json: Episode = await response.json();
-  return json;
-};
-
-export const getLocation = async ({ id }: { id: string }) => {
-  const response = await fetch(`${BASE_API_URL}/location/${id}`);
-  const json: Location = await response.json();
+export const getData = async ({ id, path }: DataParams) => {
+  const response = await fetch(`${BASE_API_URL}/${path}/${id}`);
+  const json: Character | Episode | Location = await response.json();
   return json;
 };
