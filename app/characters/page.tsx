@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Characters } from '../../components/character/Characters';
+import { Loader } from '../../components/common/Loader';
 import { Pagination } from '../../components/pagination/Pagination';
 import { getDataByPage } from '../../services/fetchingAPI';
 import { APIResponse } from '../../types/apiType';
@@ -15,10 +16,12 @@ const CharactersPage = async ({ searchParams }: Params) => {
   const characters = results as Character[];
 
   return (
+    <Suspense fallback={<Loader />}>
     <div className={styles.wrapper}>
       <Characters characters={characters} />
       <Pagination info={info} page={parseInt(page)} route="characters" />
     </div>
+    </Suspense>
   )
 }
 
