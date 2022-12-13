@@ -16,7 +16,7 @@ const CharactersPage = async ({ searchParams }: { searchParams: { page?: string 
   return (
     <div className={styles.wrapper}>
       <Characters characters={characters} />
-      <Pagination info={info} page={parseInt(page)} />
+      <Pagination info={info} page={parseInt(page)} route="characters" />
     </div>
   )
 }
