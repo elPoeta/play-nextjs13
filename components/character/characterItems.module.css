@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 200px 1fr;
   background-color: #1e293b;
-  border-radius: 10px;
+  border-radius: 95px;
   column-gap: 5px;
 }
 

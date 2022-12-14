@@ -22,7 +22,7 @@ export const CharactersItem = async ({ character }: { character: Character }) =>
   return (
     <article className={styles.article}>
       <div>
-        <Image alt={character.name} src={character.image} width={200} height={200} style={{ borderBottomLeftRadius: '10px', borderTopLeftRadius: '10px' }} />
+        <Image alt={character.name} src={character.image} width={200} height={200} style={{ borderRadius: '100%', boxShadow: '0px 0px 5px 5px rgb(130 197 255 / 84%)' }} />
       </div>
       <div className={styles.characterData}>
         <section className={styles.character}>
