@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link';
-import React from 'react'
 import { getData } from '../../services/fetchingAPI';
 import { Character, Status } from '../../types/character'
 import { Episode } from '../../types/episode';
@@ -40,7 +39,7 @@ export const CharactersItem = async ({ character }: { character: Character }) =>
           <p>First seen in:</p>
           {firstSeenUrl && episode ? (
             <Link href={`/episodes/${episode.id}`}>{episode.name}</Link>
-          ) : (<>-</>)}
+            ) : (<>-</>)}
         </section>
       </div>
     </article>

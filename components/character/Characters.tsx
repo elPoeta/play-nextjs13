@@ -8,6 +8,7 @@ export const Characters = ({ characters }:{ characters: Character[] }) => {
     <div className={styles.wrapper}>
       {characters.map(character => 
         <div key={character.id} >
+           {/* @ts-expect-error Server Component */}
           <CharactersItem character={character}/>
         </div>
       )}
