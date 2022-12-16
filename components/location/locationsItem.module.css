@@ -1,0 +1,70 @@
+.card {
+  margin: 20px;
+  padding: 20px;
+  min-height: 200px;
+  display: grid;
+  grid-template-rows: 50px 1fr 50px;
+  border-radius: 10px;
+  box-shadow:  2px 3px 11px rgb(255 0 240 / 55%);
+  transition: all 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+.cardLink,
+.cardIcon {
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cardLink::after {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.5s;
+}
+
+.cardLink:hover::after {
+  width: 100%;
+}
+
+.cardIcon {
+  grid-row: 1/2;
+  font-size: 2em;
+}
+
+.cardTitle {
+  grid-row: 2/3;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.cardTitle p {
+  font-size: .8em;
+}
+
+.cardApply {
+  grid-row: 3/4;
+  align-self: center;
+}
+
+.cardBg {
+  background: radial-gradient(at right top, rgb(15, 23, 42), rgb(88, 28, 135), rgb(15, 23, 42))
+}
+.arrow {
+  position: absolute;
+  top: -5px;
+  margin-left: 5px;
+}
+.svg {
+  width: 2rem;
+  height: 2rem;
+}
