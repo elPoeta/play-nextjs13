@@ -9,7 +9,6 @@
   position: relative;
   grid-area: 1 / 1;
   height: 200px;
-  width: 400px;
   transform: translateX(10px) rotateY(25deg) rotateX(10deg);
   background: rgba(249, 198, 26, 0.88);
   display: flex;
@@ -21,14 +20,14 @@
   font-size: 1.5rem;
   font-weight: 900;
   backface-visibility: hidden;
-  box-shadow: 0 10px 30px -3px rgba(0,0,0,.1);
+  box-shadow: 0 10px 30px -3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
 .h2 {
   font-weight: 900;
 }
-.card p  {
+.card p {
   position: absolute;
   bottom: 5px;
   right: 5px;
@@ -47,7 +46,7 @@
 .wrapper:before {
   --bw: 9px;
   grid-area: 1 / 1;
-  content: '';
+  content: "";
   backface-visibility: hidden;
   height: 100%;
   width: 100%;
@@ -60,15 +59,13 @@
   box-sizing: content-box;
 }
 
-
 .wrapper:hover > div,
 .wrapper:hover:before {
   transform: none;
 }
 
-
 .wrapper > div,
 .wrapper:before {
   will-change: transform;
-  transition: .3s transform cubic-bezier(.25,.46,.45,1);
+  transition: 0.3s transform cubic-bezier(0.25, 0.46, 0.45, 1);
 }
